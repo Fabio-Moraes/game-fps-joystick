@@ -6,7 +6,7 @@ import { Mesh, TextureLoader } from 'three'
 import { useContexState } from '../hooks/context'
 
 export function Gun({ url }: { url: string }) {
-  const texture = useLoader(TextureLoader, '/public/textures/brilho.png');
+  const texture = useLoader(TextureLoader, '/public/textures/grass.jpg');
 
 
   const meshRef = useRef({} as Mesh);
