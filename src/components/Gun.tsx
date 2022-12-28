@@ -8,6 +8,8 @@ import { useContexState } from '../hooks/context'
 export function Gun({ url }: { url: string }) {
   //const texture = useLoader(TextureLoader, '/public/textures/grass.jpg');
 
+  const texture = new TextureLoader().load('/public/textures/brilho.png')
+
 
   const meshRef = useRef({} as Mesh);
 
@@ -43,7 +45,7 @@ export function Gun({ url }: { url: string }) {
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.025, .35]} scale={.04} >
         <pointLight position={[0, 0, 0]} intensity={position === 'BACK' ? 1 : 0} distance={0.5} />
         <sphereGeometry args={[1, 32, 32]} /> 
-        {/* <meshLambertMaterial  attach='material' map={texture} transparent={true} opacity={position === 'BACK' ? 1 : 0} /> */}
+        <meshLambertMaterial  attach='material' map={texture} transparent={true} opacity={position === 'BACK' ? 1 : 0} />
       </mesh>
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.1, .6]} scale={.06} >
         <pointLight position={[10, 0, -5]} intensity={0.1} castShadow distance={5} />
