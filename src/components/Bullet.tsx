@@ -3,7 +3,7 @@ import { Mesh } from 'three'
 
 export const Bullet = (props: SphereProps) => {
   const [ref, api] = useSphere<Mesh>(() => ({
-    mass: 5,
+    mass: 1,
     ...props
   }));
 

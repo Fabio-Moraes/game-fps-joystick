@@ -24,7 +24,7 @@ interface ObjProps {
 export const Cube = (props: PropTypes) => {
   const [color, setColor] = useState("white");
   const [cubeRef, api] = useBox<Mesh>(() => ({
-    mass: 1,
+    mass: 2,
     args: [0.5, 0.5, 0.5],
     material: {
       friction: 1,
