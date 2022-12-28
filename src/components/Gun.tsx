@@ -2,14 +2,14 @@ import { useSphere, SphereProps } from "@react-three/cannon";
 import { useGLTF } from '@react-three/drei'
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { Mesh, TextureLoader } from 'three'
+import { Mesh, TextureLoader, NearestFilter } from 'three'
 import { useContexState } from '../hooks/context'
 
 export function Gun({ url }: { url: string }) {
   //const texture = useLoader(TextureLoader, '/public/textures/grass.jpg');
 
   const texture = new TextureLoader().load('/public/textures/brilho.png')
-
+  texture.magFilter = NearestFilter;
 
   const meshRef = useRef({} as Mesh);
 
