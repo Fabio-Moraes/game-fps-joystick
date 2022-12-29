@@ -1,20 +1,19 @@
-import { useSphere, SphereProps } from "@react-three/cannon";
-import { useGLTF } from '@react-three/drei'
-import { useFrame, useLoader } from "@react-three/fiber";
-import { useRef, useState } from "react";
-import { Mesh, TextureLoader } from 'three'
-import { useContexState } from '../hooks/context'
+import { useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+import { useRef, useState } from 'react';
+import { Mesh } from 'three';
+
+import { useContexState } from '../hooks/context';
+import { shotTexture } from '../assets/textures';
 
 export function Gun({ url }: { url: string }) {
-  const texture = useLoader(TextureLoader, 'https://legpzytiaeepvlgmekfk.supabase.co/storage/v1/object/public/game-3d/textures/01-shot.png?t=2022-12-28T22%3A52%3A45.652Z');
-
-  const meshRef = useRef({} as Mesh);
-
   const [rotation, setRotation] = useState('DOWN');
   const [position, setPosition] = useState('BACK');
 
-  const { scene } = useGLTF(url);
   const { buttonShoot } = useContexState();
+  const { scene } = useGLTF(url);
+
+  const meshRef = useRef({} as Mesh);
 
   useFrame((_, delta) => {
     if (buttonShoot || rotation === 'DOWN') {
@@ -41,8 +40,8 @@ export function Gun({ url }: { url: string }) {
     <>
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.025, .35]} scale={.04} >
         <pointLight position={[0, 0, 0]} intensity={position === 'BACK' ? 1 : 0} distance={0.5} />
-        <sphereGeometry args={[1, 32, 32]} /> 
-        <meshLambertMaterial  attach='material' map={texture} transparent={true} opacity={position === 'BACK' ? 1 : 0} />
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshLambertMaterial attach='material' map={shotTexture} transparent={true} opacity={position === 'BACK' ? 1 : 0} />
       </mesh>
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.1, .6]} scale={.06} >
         <pointLight position={[10, 0, -5]} intensity={0.1} castShadow distance={5} />

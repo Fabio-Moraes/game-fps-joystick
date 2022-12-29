@@ -1,12 +1,15 @@
-import { ThreeEvent } from '@react-three/fiber';
+import { ThreeEvent, useLoader } from '@react-three/fiber';
 import { usePlane } from "@react-three/cannon";
-import { Mesh } from 'three';
+import { Mesh, TextureLoader, NearestFilter, RepeatWrapping } from 'three';
 import { useStore } from "../hooks/useStore";
-import { groundTexture } from "../images/textures"
+import { groundTexture } from "../assets/textures"
 
 type AltKeyTypes = ThreeEvent<MouseEvent> & { altKey: boolean }
 
+
 export const Plane = () => {
+
+
   const [addCube] = useStore((state) => [state.addCube]);
 
   const [ref, api] = usePlane<Mesh>(() => ({
@@ -17,7 +20,6 @@ export const Plane = () => {
     }
   }));
 
-  groundTexture.repeat.set(50, 50)
 
   return (
     <mesh

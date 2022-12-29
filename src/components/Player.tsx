@@ -184,7 +184,7 @@ export const Player = () => {
       })}
 
       <mesh ref={gunRef}>
-        <Gun url='https://legpzytiaeepvlgmekfk.supabase.co/storage/v1/object/public/game-3d/3d/scifi_gun.glb?t=2022-12-21T18%3A29%3A51.260Z' />
+        <Gun url='https://legpzytiaeepvlgmekfk.supabase.co/storage/v1/object/public/game-3d/elements/weapons/cybergun_basic/models/cybergun_basic.glb?t=2022-12-29T12%3A27%3A27.707Z' />
       </mesh>
 
       <mesh ref={playerRef}>
