@@ -25,7 +25,7 @@ export const Cube = (props: PropTypes) => {
   const [color, setColor] = useState("white");
   const [cubeRef, api] = useBox<Mesh>(() => ({
     mass: 2,
-    args: [0.5, 0.5, 0.5],
+    args: [1, 1, 1],
     material: {
       friction: 1,
       restitution: 0
@@ -51,7 +51,7 @@ export const Cube = (props: PropTypes) => {
       castShadow
       layers={props.layers}
     >
-      <boxGeometry args={[0.5, 0.5, 0.5]} />
+      <boxGeometry args={[1, 1, 1]} />
 
       <meshStandardMaterial
         color={color}

@@ -42,22 +42,23 @@ export const DefaultScene = () => {
         <Player />
         <Plane />
         <Cube position={[0, 0, -5]} layers={1} />
-        <Cube position={[-0.6, 0, -5]} />
-        <Cube position={[0.6, 0, -5]} />
-        <Cube position={[-0.3, 0.5, -5]} />
-        <Cube position={[0.3, 0.5, -5]} />
+        <Cube position={[1, 0, -5]} />
+        <Cube position={[2, 0, -5]} />
         <Cube position={[0, 1, -5]} />
-        <Cube position={[-5, 0, -5]} />
-        <Cube position={[-5, 0.5, -5]} />
+        <Cube position={[1, 1, -5]} />
+        <Cube position={[2, 1, -5]} />
+
+        <Cube position={[-5, 3, -5]} />
+        <Cube position={[-5, 2, -5]} />
         <Cube position={[-5, 1, -5]} />
-        <Cube position={[-5, 1.5, -5]} />
+        <Cube position={[-5, 0, -5]} />
 
        {/*  <  Soldier /> */}
 
        {/*  <Planet /> */}
+        <Cube position={[0, 1, 5]} type={"Static"} />
+        <Cube position={[1, 0, 5]} type={"Static"} />
         <Cube position={[0, 0, 5]} type={"Static"} />
-        <Cube position={[0, 0, 5.5]} type={"Static"} />
-        <Cube position={[0, 0.5, 5.5]} type={"Static"} />
       </Physics>
     </>
   );

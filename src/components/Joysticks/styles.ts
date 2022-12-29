@@ -12,10 +12,8 @@ export const Container = styled.div`
 
   pointer-events: none;
   position: absolute;
-
-  //opacity: .5;
-  //background-color: hotpink;
 `;
+
 
 export const JoystickLeft = styled.div`
  margin-left: 125px;

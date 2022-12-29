@@ -75,10 +75,10 @@ export function Joysticks() {
         <Container>
             <JoystickLeft >
                 <ReactNipple
-                    options={options}
-                    onEnd={joystickLeftEnd}
-                    onMove={joystickLeftMove}
-                    onDir={joystickLeftDir}
+                options={options}
+                onEnd={joystickLeftEnd}
+                onMove={joystickLeftMove}
+                onDir={joystickLeftDir}
                 />
             </JoystickLeft>
 

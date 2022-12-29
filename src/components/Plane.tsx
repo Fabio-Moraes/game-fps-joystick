@@ -14,7 +14,7 @@ export const Plane = () => {
 
   const [ref, api] = usePlane<Mesh>(() => ({
     rotation: [-Math.PI / 2, 0, 0],
-    position: [0, -0.25, 0],
+    position: [0, -0.5, 0],
     material: {
       friction: 0.1
     }
