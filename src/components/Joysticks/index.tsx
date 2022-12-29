@@ -65,7 +65,7 @@ export function Joysticks() {
 
     const options = {
         mode: "static",
-        color: "rgb(65, 105, 255)",
+        color: "#484d50",
         position: { top: "50%", left: "10%" },
         size: 110,
         treshold: 0.1
