@@ -31,7 +31,6 @@ const iconCSS = css`
   margin: 10px;
   color: rgba( 255, 255, 255, .8 );
   padding: 2px;
-  background-size: 30px;
   background-color:  rgba( 72, 77,80,.7);
   border-radius: 100%;
   box-shadow: 0px 0px 1px 6px rgba( 72, 77,80, .5);
