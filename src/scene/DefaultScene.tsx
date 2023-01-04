@@ -9,7 +9,6 @@ import { Cube } from '../components/Cube';
 import { Stars, Sky } from '@react-three/drei';
 
 import { Planet } from '../components/Planet';
-import { Soldier } from '../components/Soldier';
 
 extend({ PointerLockControls });
 
