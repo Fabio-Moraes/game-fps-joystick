@@ -6,6 +6,9 @@ interface DirectionTypes {
 }
 
 type StateContext = {
+  night: boolean;
+  setNight: (value: boolean) => void;
+
   buttonDeleteCube: boolean;
   setButtonDeleteCube: (value: boolean) => void;
 
@@ -46,10 +49,15 @@ const Provider = ({ children }: ProviderProps) => {
 
   const [buttonDeleteCube, setButtonDeleteCube] = useState(false);
 
+  const [night, setNight] = useState(false);
+
   return (
     <Context.Provider
       value={
         {
+          night,
+          setNight,
+
           buttonDeleteCube,
           setButtonDeleteCube,
 

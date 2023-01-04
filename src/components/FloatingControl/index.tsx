@@ -2,7 +2,8 @@ import { useContexState } from '../../hooks/context'
 import * as S from './styles'
 
 export function FloatingControl() {
-    const { setButtonJump, setButtonShoot, buttonShoot, buttonJump } = useContexState();
+    const { buttonShoot, buttonJump, night } = useContexState();
+    const { setButtonJump, setButtonShoot, setNight } = useContexState();
 
     return (
         <S.Container>
@@ -17,7 +18,12 @@ export function FloatingControl() {
                     onTouchEnd={() => setButtonJump(false)}
                 > <S.ButtonCircle activeCSS={buttonJump} /></button>
 
-                <S.ButtonSquare />
+                <button
+                    onTouchStart={() => setNight(night ? false : true)}
+                //onTouchEnd={() => setButtonJump(false)}
+                > <S.ButtonSquare /></button>
+
+
                 <S.ButtonTriangle />
             </S.Wrapper>
         </S.Container >

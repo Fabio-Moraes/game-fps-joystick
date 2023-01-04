@@ -11,6 +11,8 @@ export function Gun({ url }: { url: string }) {
   const [position, setPosition] = useState('BACK');
 
   const { buttonShoot } = useContexState();
+  const { night, setNight } = useContexState();
+
   const { scene } = useGLTF(url);
 
   const meshRef = useRef({} as Mesh);
@@ -38,13 +40,17 @@ export function Gun({ url }: { url: string }) {
 
   return (
     <>
+      <mesh>
+        {night && <pointLight position={[0, 1.6, 0]} intensity={.5} distance={20} />}
+      </mesh>
+
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.025, .35]} scale={.04} >
-        <pointLight position={[0, 0, 0]} intensity={position === 'BACK' ? 1 : 0} distance={0.5} />
         <sphereGeometry args={[1, 32, 32]} />
         <meshLambertMaterial attach='material' map={shotTexture} transparent={true} opacity={position === 'BACK' ? 1 : 0} />
       </mesh>
+
       <mesh ref={meshRef} rotation={[0, 1.6, 0]} position={[.2, -.1, .6]} scale={.06} >
-        <pointLight position={[10, 0, -5]} intensity={0.1} castShadow distance={5} />
+        <pointLight position={[10, 0, -5]} intensity={0.1} castShadow distance={3} />
         <sphereGeometry args={[1, 32, 32]} />
         <meshLambertMaterial color="hotpink" transparent={true} opacity={0} />
         <primitive object={scene} onClick={() => console.log('-gun-')} wireframe />
