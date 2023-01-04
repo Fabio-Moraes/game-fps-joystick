@@ -8,10 +8,6 @@ import { Gun } from "./Gun";
 
 import { useContexState } from "../hooks/context";
 
-import { Suspense } from 'react'
-
-import { useGLTF } from '@react-three/drei'
-import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 //import { Mesh, MeshStandardMaterial } from 'three';
 
 const speed = 5;

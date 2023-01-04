@@ -1,15 +1,12 @@
-import { ThreeEvent, useLoader } from '@react-three/fiber';
+import { ThreeEvent } from '@react-three/fiber';
 import { usePlane } from "@react-three/cannon";
-import { Mesh, TextureLoader, NearestFilter, RepeatWrapping } from 'three';
+import { Mesh } from 'three';
 import { useStore } from "../hooks/useStore";
 import { groundTexture } from "../assets/textures"
 
 type AltKeyTypes = ThreeEvent<MouseEvent> & { altKey: boolean }
 
-
 export const Plane = () => {
-
-
   const [addCube] = useStore((state) => [state.addCube]);
 
   const [ref, api] = usePlane<Mesh>(() => ({
@@ -19,7 +16,6 @@ export const Plane = () => {
       friction: 0.1
     }
   }));
-
 
   return (
     <mesh

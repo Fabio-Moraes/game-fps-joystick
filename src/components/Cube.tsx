@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useBox } from "@react-three/cannon";
 import { Mesh } from 'three';
 
-
-
 import niceColors from "nice-color-palettes";
 
 interface PropTypes {
