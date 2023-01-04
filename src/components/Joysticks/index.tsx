@@ -1,9 +1,6 @@
-import { extend } from "@react-three/fiber";
-import { useState } from "react";
 import ReactNipple from "react-nipple";
 import { useContexState } from '../../hooks/context';
-import { Container, JoystickRight, JoystickLeft } from './styles';
-
+import * as S from './styles';
 
 interface Data {
     direction?: {
@@ -23,7 +20,6 @@ interface Data {
         }
     };
 };
-
 
 interface Evt {
     type: string;
@@ -65,33 +61,32 @@ export function Joysticks() {
 
     const options = {
         mode: "static",
-        color: "#484d50",
+        color: 'white',
         position: { top: "50%", left: "10%" },
         size: 110,
         treshold: 0.1
     };
 
     return (
-        <Container>
-            <JoystickLeft >
+        <S.Container>
+            <S.JoystickLeft >
                 <ReactNipple
-                options={options}
-                onEnd={joystickLeftEnd}
-                onMove={joystickLeftMove}
-                onDir={joystickLeftDir}
+                    options={options}
+                    onEnd={joystickLeftEnd}
+                    onMove={joystickLeftMove}
+                    onDir={joystickLeftDir}
                 />
-            </JoystickLeft>
+            </S.JoystickLeft>
 
-            <JoystickRight>
+            <S.JoystickRight>
                 <ReactNipple
                     options={options}
                     onEnd={joystickRightEnd}
                     onMove={joystickRightMove}
                     onDir={joystickRightDir}
                 />
-
-            </JoystickRight >
-        </Container>
+            </S.JoystickRight >
+        </S.Container>
     );
 };
 

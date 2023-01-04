@@ -1,25 +1,25 @@
-import { Container, Wrapper, ButtonXmark, ButtonSquare, ButtonTriangle, ButtonCircle } from './styles'
 import { useContexState } from '../../hooks/context'
+import * as S from './styles'
 
 export function FloatingControl() {
     const { setButtonJump, setButtonShoot, buttonShoot, buttonJump } = useContexState();
 
     return (
-        <Container>
-            <Wrapper>
+        <S.Container>
+            <S.Wrapper>
                 <button
                     onTouchStart={() => setButtonShoot(true)}
                     onTouchEnd={() => setButtonShoot(false)}
-                > <ButtonXmark activeCSS={buttonShoot} /></button>
+                > <S.ButtonXmark activeCSS={buttonShoot} /></button>
 
                 <button
                     onTouchStart={() => setButtonJump(true)}
                     onTouchEnd={() => setButtonJump(false)}
-                > <ButtonCircle activeCSS={buttonJump} /></button>
+                > <S.ButtonCircle activeCSS={buttonJump} /></button>
 
-                <ButtonSquare />
-                <ButtonTriangle />
-            </Wrapper>
-        </Container >
+                <S.ButtonSquare />
+                <S.ButtonTriangle />
+            </S.Wrapper>
+        </S.Container >
     );
 }
