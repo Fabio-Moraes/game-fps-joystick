@@ -28,7 +28,6 @@ export const DefaultScene = () => {
     <>
       {night && <Stars radius={500} depth={50} count={1000} factor={10} />}
       {!night && <>
-        {/*  */}
         {/* <Skybox /> */}
         <Sky sunPosition={[100, 100, 20]} />
         <directionalLight position={[3, 0, 3]} intensity={0.5} castShadow />

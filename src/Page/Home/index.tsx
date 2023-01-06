@@ -5,17 +5,9 @@ import { Joysticks } from '../../components/Joysticks';
 import { FloatingControl } from '../../components/FloatingControl';
 
 import { DefaultScene } from "../../scene/DefaultScene";
-import { useContexState } from '../../hooks/context'
+import { useContexState } from '../../hooks/context';
 
-import callofduty from '/src/assets/textures/callofduty3.png';
-
-import { Aim } from './styles'
-
-import {
-  Container,
-  WrapperCanvas,
-  Duty
-} from './styles'
+import * as S from './styles'
 
 function Box() {
   return (
@@ -30,21 +22,21 @@ export function Home() {
   const { playerRotationPosition } = useContexState();
 
   return (
-    <Container>
-      <WrapperCanvas>
+    <S.Container>
+      <S.WrapperCanvas>
         <StrictMode>
-          <Canvas shadows camera={{ fov: 45 }} gl={{ alpha: false }}>
-            <Suspense fallback={null}>
+          <Suspense fallback={<S.Loading>loading...</S.Loading>}>
+            <Canvas shadows camera={{ fov: 45 }} gl={{ alpha: false }}>
               <DefaultScene />
-            </Suspense>
-          </Canvas>
+            </Canvas>
+            <S.Aim>+</S.Aim>
+            <Joysticks />
+            <FloatingControl />
+          </Suspense>
         </StrictMode>
-      </WrapperCanvas>
-      <Aim>+</Aim>
+      </S.WrapperCanvas>
       {/* <Duty src={callofduty} /> */}
-      <Joysticks />
-      <FloatingControl />
-    </Container>
+    </S.Container>
   );
 }
 

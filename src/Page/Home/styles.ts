@@ -1,6 +1,13 @@
 import styled, { css } from 'styled-components';
 import { PlusCircle } from '../../styles/icons'
 
+export const Loading = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+`
+
 export const Container = styled.div`
   max-height: 100vh;
   max-width: 100vw;
@@ -46,7 +53,6 @@ export const Duty = styled.img`
   margin-left: 45px;
 
   position: absolute;
-
 `
 
 export const AimIcon = styled(PlusCircle)`

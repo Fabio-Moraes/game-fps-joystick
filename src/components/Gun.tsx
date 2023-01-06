@@ -1,6 +1,6 @@
+import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-import { useRef, useState } from 'react';
 import { Mesh } from 'three';
 
 import { useContexState } from '../hooks/context';
@@ -10,11 +10,9 @@ export function Gun({ url }: { url: string }) {
   const [rotation, setRotation] = useState('DOWN');
   const [position, setPosition] = useState('BACK');
 
-  const { buttonShoot } = useContexState();
-  const { night, setNight } = useContexState();
+  const { buttonShoot, night } = useContexState();
 
   const { scene } = useGLTF(url);
-
   const meshRef = useRef({} as Mesh);
 
   useFrame((_, delta) => {
@@ -24,7 +22,7 @@ export function Gun({ url }: { url: string }) {
 
       meshRef.current.rotation.x += (rotation === 'UP' ? -1.5 : 1.5) * delta;
     } else {
-      meshRef.current.rotation.x -= meshRef.current.rotation.x > 0 ? 1.5 * delta : 0
+      meshRef.current.rotation.x -= meshRef.current.rotation.x > 0 ? 1.5 * delta : 0;
     }
 
 
@@ -34,7 +32,7 @@ export function Gun({ url }: { url: string }) {
 
       meshRef.current.position.z += (position === 'FRONT' ? -.5 : .5) * delta;
     } else {
-      meshRef.current.position.z -= meshRef.current.position.z > .6 ? .5 * delta : 0
+      meshRef.current.position.z -= meshRef.current.position.z > .6 ? .5 * delta : 0;
     }
   });
 
